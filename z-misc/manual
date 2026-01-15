@@ -1,0 +1,9 @@
+Save the plugin structure to a file.
+tree "C:\laragon\www\multisite\wp-content\plugins\decentralized-user-auth" /F > "C:\laragon\www\multisite\wp-content\plugins\decentralized-user-auth\z-misc\folder-structure.txt"
+
+Generate autoload
+C:\laragon\www
+λ cd C:\laragon\www\multisite\wp-content\plugins\decentralized-user-auth
+
+C:\laragon\www\multisite\wp-content\plugins\decentralized-user-auth
+λ composer dump-autoload

@@ -1,0 +1,54 @@
+🧱 Extended Plugin Build Plan
+🎯 Objective: Enhance network control, UI clarity, and config flexibility.
+Here’s how we’ll tackle each file:
+
+1️⃣ privilege-checks.php
+🔐 Purpose: Enforce user capabilities across subsites or restrict sensitive actions to “main admins.”
+
+🚧 Steps to Build:
+
+Define dua_can_link_users($user_id) to check if the current user has authority to link/unlink.
+
+Add logic to detect if the current site is the main site or a subsite.
+
+Optionally integrate role restrictions: allow only admins or a specific capability to perform linkage.
+
+Provide helper like dua_get_main_site_id() if needed for centralized checks.
+
+2️⃣ admin-ui.php
+🖥 Purpose: Render the interface for managing linked users (link/unlink), role visibility, and deletion warnings.
+
+🚧 Steps to Build:
+
+Fetch all users scoped to current site_id and their linkage info.
+
+Display a sortable table with:
+
+🧩 Role badge (via dua_get_user_role_label)
+
+🔗 Link status (linked / unlinked)
+
+🛠 Actions (Link / Unlink / View Profile)
+
+Add conditional buttons with class dua-unlink-user or dua-link-user for admin.js support.
+
+Use WordPress UI styles (<table class="wp-list-table">) for familiar look.
+
+3️⃣ settings-page.php
+⚙️ Purpose: Offer a configuration panel for plugin behavior — optional but powerful.
+
+🚧 Steps to Build:
+
+Register settings page via add_options_page()
+
+Create options like:
+
+Toggle linkage enforcement (dua_enforce_linking)
+
+Default role when linking a user
+
+Enable/disable deletion warnings
+
+Store settings using register_setting() and retrieve via get_option()
+
+Localize strings with __() for .pot compatibility

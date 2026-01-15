@@ -1,0 +1,51 @@
+🧭 Plugin Build Strategy: From Foundation to Full Functionality
+We'll move from schema setup to core logic, then layer in admin interfaces and user controls, and finally polish with UI and internationalization.
+
+------------------------------------------
+⚙️ Phase 1: Database & Plugin Bootstrapping
+Objective: Ensure that the data structure and hooks are ready to support linked user logic.
+
+Step	File	Task
+1️⃣	decentralized-user-auth.php	Set up plugin initialization, register hooks, load core files.
+2️⃣	schema-setup.php	Add site_id and main_id columns to usermeta. Ensure schema updates on activation.
+
+------------------------------------------
+🔑 Phase 2: Core Authentication & Linking Logic
+Objective: Build the foundation for user linkage and site-aware login flow.
+
+Step	File	Task
+3️⃣	authentication.php	Modify login process to validate user via site_id. Handle fallback to main_id.
+4️⃣	linking-handler.php	Build logic for linking subsite users to main accounts. Enforce uniqueness and allow unlinking.
+
+-----------------------------------------
+🧱 Phase 3: Add/Delete User Logic
+Objective: Empower subsite administrators with scoped user control.
+
+Step	File	Task
+5️⃣	user-management.php	Create functions for adding/removing users scoped by site_id. Add safety checks for linked users.
+6️⃣	user-actions.php	Hook into user_register, delete_user, remove_user_from_blog to enforce subsite-level control.
+
+-----------------------------------------
+🛠️ Phase 4: Admin Interfaces
+Objective: Provide a user-friendly UI to manage linkages and visualize roles.
+
+Step	File	Task
+7️⃣	admin-ui.php	Render interface for linking/unlinking users, show linkage status, and alert on deletions.
+8️⃣	settings-page.php	Optional config UI — for global rules, permissions, or role mappings. Can be deferred.
+
+----------------------------------------
+🪄 Phase 5: UI Enhancements & Utilities
+Objective: Improve usability and maintainability.
+
+Step	File	Task
+9️⃣	helpers.php	Add reusable functions: get site ID, validate links, etc.
+🔟	admin.js	Add optional dynamic interactivity for account linking or modals.
+
+-----------------------------------------
+🌍 Phase 6: Final Touches
+Objective: Prepare for distribution and localization.
+
+Step	File	Task
+1️⃣1️⃣	README.md	Document plugin features, usage, and capabilities.
+1️⃣2️⃣	decentralized-user-auth.pot	Prepare for translations so others can localize your plugin.
+1️⃣3️⃣	uninstall.php	Cleanly remove all data added by the plugin. Respect deletion protocols.

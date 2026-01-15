@@ -1,0 +1,19 @@
+#dua-linked-list td {
+    vertical-align: middle;
+}
+#dua-link-status {
+    color: #444;
+}
+.dua-unlink-user-account {
+    margin-left: 8px;
+}
+
+.link-account-fields-table td {
+	padding: 5px 5px;
+	line-height: 0;
+}
+
+.link-account-fields-table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,5 @@
+/wordpress/wp-includes/pluggable.php
+-- Overwrite function get_user_by addint the site_id.
+
+/wordpress/wp-includes/class-wp-user.php
+-- Replace class WP_User with class DUA_WP_User and updated the method get_data_by to include site_id.

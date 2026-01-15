@@ -1,0 +1,10 @@
+# Ignore Composer dependencies
+/vendor/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/project files
+.vscode/
+.idea/

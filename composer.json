@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Dua\\": "inc/",
+            "Dua\\Admin\\": "admin/",
+            "Dua\\Overrides\\": "overrides/"
+        }
+    },
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    }
+}
